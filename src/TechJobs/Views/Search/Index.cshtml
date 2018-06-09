@@ -1,6 +1,7 @@
 ﻿<h1>@ViewBag.title</h1>
+<form method="post"></form>
 
-<form action="/Search/Results">
+<form action="/search/Results" method="get">
     <h2>Search by:</h2>
 
     <p>
@@ -10,8 +11,8 @@
                 <input type="radio"
                        name="searchType"
                        id="@column.Key"
-                       value="@column.Key" 
-                       checked="@column.Key == 'all''"/>
+                       value="@column.Key"
+                       checked="@column.Key == 'all''" />
                 <label for="@column.Key">@column.Value</label>
             </span>
         }
@@ -25,12 +26,4 @@
     <input type="submit" value="Search" />
 </form>
 
-<hr />
 
-@if (ViewBag.jobs != null)
-{
-
-    <h3>@ViewBag.jobs.Count Result(s)</h3>
-
-    // TODO #2 - Loop over jobs dictionary and display all job fields 
-}
